@@ -1,0 +1,220 @@
+:root {
+    --primary-color: #ffb6c1;
+    --secondary-color: #ff69b4;
+    --dark-pink: #db7093;
+    --light-pink: #fff0f5;
+    --text-color: #333;
+}
+
+body {
+    background: linear-gradient(135deg, #fff0f5 0%, #ffb6c1 100%);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding-top: 76px;
+}
+
+.navbar {
+    background: linear-gradient(135deg, var(--secondary-color), var(--dark-pink)) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.navbar-brand, .nav-link {
+    color: white !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: var(--light-pink) !important;
+}
+
+.hero-section {
+    padding: 100px 0;
+    text-align: center;
+}
+
+.profile-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--secondary-color);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    background-color: #f8f9fa;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+}
+
+.hero-section h1 {
+    font-size: 3rem;
+    color: var(--dark-pink);
+    margin-bottom: 10px;
+}
+
+.hero-section h2 {
+    font-size: 1.8rem;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: var(--dark-pink);
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: var(--secondary-color);
+}
+
+.bg-light {
+    background-color: rgba(255, 255, 255, 0.7) !important;
+}
+
+#knowledge-graph {
+    width: 100%;
+    height: 600px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.graph-placeholder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    padding: 20px;
+}
+
+.graph-placeholder img {
+    max-width: 100%;
+    max-height: 400px;
+    margin-bottom: 20px;
+}
+
+.footer {
+    background: var(--dark-pink);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
+
+.card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.skill-item ul li {
+    position: relative;
+    padding-left: 20px;
+    margin-bottom: 10px;
+}
+
+.skill-item ul li::before {
+    content: "•";
+    color: var(--secondary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+    
+    .profile-img {
+        width: 200px;
+        height: 200px;
+        margin-bottom: 30px;
+    }
+    
+    #knowledge-graph {
+        height: 400px;
+    }
+}
+
+/* 知识图谱节点动画 */
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+.pulse-animation {
+    animation: pulse 2s infinite;
+}
+
+.node-details {
+    transition: all 0.3s ease;
+}
+
+.drag-instructions {
+    background-color: #e9ecef;
+    border-left: 4px solid var(--secondary-color);
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+}
+
+.graph-controls {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 15px;
+    flex-wrap: wrap;
+}
+
+.dragging {
+    cursor: grabbing !important;
+}
+
+.node-highlight {
+    filter: brightness(1.2) drop-shadow(0 0 8px rgba(255, 105, 180, 0.7));
+    transition: filter 0.3s ease;
+}
+
+.link-highlight {
+    stroke-width: 4px !important;
+    transition: stroke-width 0.3s ease;
+}
+
+.legend-item {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 5px;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    border-radius: 2px;
+}
