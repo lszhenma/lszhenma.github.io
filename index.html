@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>罗桑珍玛 - 个人学术主页</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #ffb6c1;
+            --secondary-color: #ff69b4;
+            --dark-pink: #db7093;
+            --light-pink: #fff0f5;
+            --text-color: #333;
+        }
+
+        body {
+            background: linear-gradient(135deg, #fff0f5 0%, #ffb6c1 100%);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding-top: 76px;
+        }
+
+        .navbar {
+            background: linear-gradient(135deg, var(--secondary-color), var(--dark-pink)) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .navbar-brand, .nav-link {
+            color: white !important;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: var(--light-pink) !important;
+        }
+
+        .hero-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .profile-img {
+            width: 250px;
+            height: 250px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--secondary-color);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            background-color: #f8f9fa;
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+            color: var(--dark-pink);
+            margin-bottom: 10px;
+        }
+
+        .hero-section h2 {
+            font-size: 1.8rem;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-padding {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: var(--dark-pink);
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+
+        .bg-light {
+            background-color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        #knowledge-graph {
+            width: 100%;
+            height: 600px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .graph-placeholder {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .graph-placeholder img {
+            max-width: 100%;
+            max-height: 400px;
+            margin-bottom: 20px;
+        }
+
+        .footer {
+            background: var(--dark-pink);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.2rem;
+            }
+            
+            .profile-img {
+                width: 200px;
+                height: 200px;
+                margin-bottom: 30px;
+            }
+            
+            #knowledge-graph {
+                height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">罗桑珍玛</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#home">首页</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">关于我</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#education">教育经历</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#skills">技能</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#knowledge">知识图谱</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">联系我</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 首页 -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4">
+                    <div class="profile-img-placeholder">
+                        <img src="罗桑珍玛.jpg" alt="罗桑珍玛" class="profile-img">
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <h1>罗桑珍玛</h1>
+                    <h2>医学影像学专业</h2>
+                    <p class="lead">天津医科大学 · 大四本科生</p>
+                    <p>"专注医学影像，致力医疗健康"</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 关于我 -->
+    <section id="about" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">关于我</h2>
+            <div class="row">
+                <div class="col-md-8 mx-auto">
+                    <p>我是罗桑珍玛，小名曲珍，来自西藏日喀则。现为天津医科大学医学影像学专业大四本科生。</p>
+                    <p>性格偏内向但温和友善，日常喜安静，也热爱运动，通常通过听歌和运动来放松自己。</p>
+                    <p>对待学习一直秉持着认真专注的态度，遇到难题时不会轻易放弃，有着不服输的精神。</p>
+                    <p>在校期间扎实巩固专业知识，对于影像学专业有较深刻的了解，期待大五的实习经历将理论知识应用于实践。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 教育经历 -->
+    <section id="education" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">教育经历</h2>
+            <div class="row">
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">2022.8 - 至今</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">天津医科大学</h6>
+                            <p class="card-text">医学影像学专业 · 本科</p>
+                            <p>主修课程：医学影像诊断学、放射技术学、医学影像设备学、人体解剖学等</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">2016.8 - 2019.7</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">复旦大学附属复兴中学</h6>
+                            <p class="card-text">高中 · 理科</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技能 -->
+    <section id="skills" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">专业技能</h2>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="skill-item card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">语言能力</h4>
+                            <ul>
+                                <li>中文 - 母语水平</li>
+                                <li>藏语 - 流利</li>
+                                <li>英语 - CET4证书</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="skill-item card h-100">
+                        <div class="card-body">
+                            <h4 class="card-title">办公技能</h4>
+                            <ul>
+                                <li>熟练使用Word、Excel、PPT</li>
+                                <li>基础HTML/CSS/JavaScript</li>
+                                <li>医学影像软件操作</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 知识图谱 -->
+    <section id="knowledge" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">医学影像知识图谱</h2>
+            <div class="alert alert-info mb-4">
+                此知识图谱展示了磁共振成像(MRI)的相关知识结构。如果交互式图表无法加载，将显示静态图表。
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div id="knowledge-graph">
+                        <div class="graph-placeholder">
+                            <h4>知识图谱加载中...</h4>
+                            <div class="spinner-border text-primary mb-3" role="status">
+                                <span class="visually-hidden">加载中...</span>
+                            </div>
+                            <p>如果长时间未显示，请检查网络连接或使用备用图表</p>
+                            <button class="btn btn-primary mt-2" onclick="loadFallbackGraph()">显示备用图表</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我 -->
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">联系我</h2>
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <div class="contact-info card">
+                        <div class="card-body text-center">
+                            <p><strong>邮箱：</strong>luosangzhenma@163.com</p>
+                            <p><strong>地址：</strong>天津市天津医科大学</p>
+                            <p><strong>家乡：</strong>西藏日喀则</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2024 罗桑珍玛 - 个人学术主页</p>
+        </div>
+    </footer>
+
+    <!-- 使用多个ECharts CDN源作为备用 -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js"></script>
+    <script>
+        // 备用CDN，如果第一个加载失败
+        if (typeof echarts === 'undefined') {
+            document.write('<script src="https://cdn.bootcdn.net/ajax/libs/echarts/5.4.3/echarts.min.js"><\/script>');
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // 等待页面完全加载
+        document.addEventListener('DOMContentLoaded', function() {
+            // 初始化知识图谱
+            initKnowledgeGraph();
+            
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // 导航栏滚动效果
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 100) {
+                    navbar.style.background = 'linear-gradient(135deg, #ff69b4, #db7093)';
+                    navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.2)';
+                } else {
+                    navbar.style.background = 'linear-gradient(135deg, var(--secondary-color), var(--dark-pink))';
+                    navbar.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+                }
+            });
+            
+            // 设置超时，如果知识图谱加载失败则显示备用方案
+            setTimeout(function() {
+                const chartContainer = document.getElementById('knowledge-graph');
+                if (chartContainer.querySelector('canvas') === null && 
+                    !chartContainer.classList.contains('fallback-loaded')) {
+                    console.warn('知识图谱加载超时，使用备用方案');
+                    loadFallbackGraph();
+                }
+            }, 5000);
+        });
+
+        // 知识图谱初始化函数
+        function initKnowledgeGraph() {
+            // 检查ECharts是否加载
+            if (typeof echarts === 'undefined') {
+                console.error('ECharts library not loaded');
+                loadFallbackGraph();
+                return;
+            }
+            
+            try {
+                // 初始化图表实例
+                const chart = echarts.init(document.getElementById('knowledge-graph'));
+                
+                // 知识图谱数据
+                const knowledgeData = {
+                    nodes: [
+                        { id: 0, name: '磁共振成像', category: 0, symbolSize: 50 },
+                        { id: 1, name: '物理原理', category: 1, symbolSize: 30 },
+                        { id: 2, name: '临床应用', category: 1, symbolSize: 30 },
+                        { id: 3, name: '设备组成', category: 1, symbolSize: 30 },
+                        { id: 4, name: '核磁共振', category: 2, symbolSize: 25 },
+                        { id: 5, name: '射频脉冲', category: 2, symbolSize: 25 },
+                        { id: 6, name: '梯度磁场', category: 2, symbolSize: 25 },
+                        { id: 7, name: '神经系统', category: 2, symbolSize: 25 },
+                        { id: 8, name: '肌肉骨骼', category: 2, symbolSize: 25 },
+                        { id: 9, name: '心血管', category: 2, symbolSize: 25 },
+                        { id: 10, name: '磁体系统', category: 2, symbolSize: 25 },
+                        { id: 11, name: '梯度系统', category: 2, symbolSize: 25 },
+                        { id: 12, name: '射频系统', category: 2, symbolSize: 25 },
+                        { id: 13, name: 'T1加权', category: 3, symbolSize: 20 },
+                        { id: 14, name: 'T2加权', category: 3, symbolSize: 20 },
+                        { id: 15, name: '弥散成像', category: 3, symbolSize: 20 },
+                        { id: 16, name: '灌注成像', category: 3, symbolSize: 20 }
+                    ],
+                    links: [
+                        { source: 0, target: 1 },
+                        { source: 0, target: 2 },
+                        { source: 0, target: 3 },
+                        { source: 1, target: 4 },
+                        { source: 1, target: 5 },
+                        { source: 1, target: 6 },
+                        { source: 2, target: 7 },
+                        { source: 2, target: 8 },
+                        { source: 2, target: 9 },
+                        { source: 3, target: 10 },
+                        { source: 3, target: 11 },
+                        { source: 3, target: 12 },
+                        { source: 2, target: 13 },
+                        { source: 2, target: 14 },
+                        { source: 2, target: 15 },
+                        { source: 2, target: 16 },
+                        { source: 7, target: 13 },
+                        { source: 7, target: 14 },
+                        { source: 7, target: 15 },
+                        { source: 7, target: 16 }
+                    ],
+                    categories: [
+                        { name: '核心概念' },
+                        { name: '主要领域' },
+                        { name: '基础概念' },
+                        { name: '成像技术' }
+                    ]
+                };
+
+                // 图表配置
+                const option = {
+                    title: {
+                        text: '磁共振成像知识图谱',
+                        textStyle: {
+                            color: '#db7093',
+                            fontSize: 20
+                        },
+                        left: 'center'
+                    },
+                    tooltip: {},
+                    legend: {
+                        data: knowledgeData.categories.map(function (a) {
+                            return a.name;
+                        }),
+                        textStyle: {
+                            color: '#333'
+                        },
+                        top: 40
+                    },
+                    animationDuration: 1500,
+                    animationEasingUpdate: 'quinticInOut',
+                    series: [{
+                        name: '磁共振成像',
+                        type: 'graph',
+                        layout: 'force',
+                        data: knowledgeData.nodes.map(node => ({
+                            ...node,
+                            itemStyle: {
+                                color: getNodeColor(node.category)
+                            },
+                            label: {
+                                show: true,
+                                position: 'right',
+                                formatter: '{b}'
+                            }
+                        })),
+                        links: knowledgeData.links,
+                        categories: knowledgeData.categories,
+                        roam: true,
+                        focusNodeAdjacency: true,
+                        itemStyle: {
+                            borderColor: '#fff',
+                            borderWidth: 1,
+                            shadowBlur: 10,
+                            shadowColor: 'rgba(0, 0, 0, 0.3)'
+                        },
+                        lineStyle: {
+                            color: 'source',
+                            curveness: 0.3
+                        },
+                        emphasis: {
+                            lineStyle: {
+                                width: 10
+                            }
+                        },
+                        force: {
+                            repulsion: 1000,
+                            gravity: 0.1,
+                            edgeLength: 100
+                        }
+                    }]
+                };
+                
+                // 设置图表选项
+                chart.setOption(option);
+                
+                // 响应窗口大小变化
+                window.addEventListener('resize', function() {
+                    chart.resize();
+                });
+                
+                console.log('知识图谱初始化成功');
+            } catch (error) {
+                console.error('知识图谱初始化失败:', error);
+                loadFallbackGraph();
+            }
+        }
+
+        // 备用图表函数
+        function loadFallbackGraph() {
+            const container = document.getElementById('knowledge-graph');
+            container.classList.add('fallback-loaded');
+            
+            container.innerHTML = `
+                <div class="graph-placeholder">
+                    <h4>磁共振成像知识图谱</h4>
+                    <div class="mt-4">
+                        <div class="row text-center">
+                            <div class="col-md-12 mb-4">
+                                <div class="card">
+                                    <div class="card-header bg-primary text-white">
+                                        核心概念
+                                    </div>
+                                    <div class="card-body">
+                                        <h5 class="card-title">磁共振成像</h5>
+                                        <div class="d-flex justify-content-around flex-wrap mt-3">
+                                            <span class="badge bg-secondary m-1">物理原理</span>
+                                            <span class="badge bg-secondary m-1">临床应用</span>
+                                            <span class="badge bg-secondary m-1">设备组成</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-header bg-info text-white">
+                                        物理原理
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">核磁共振</li>
+                                            <li class="list-group-item">射频脉冲</li>
+                                            <li class="list-group-item">梯度磁场</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-header bg-success text-white">
+                                        临床应用
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">神经系统</li>
+                                            <li class="list-group-item">肌肉骨骼</li>
+                                            <li class="list-group-item">心血管</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-4 mb-3">
+                                <div class="card h-100">
+                                    <div class="card-header bg-warning text-dark">
+                                        设备组成
+                                    </div>
+                                    <div class="card-body">
+                                        <ul class="list-group list-group-flush">
+                                            <li class="list-group-item">磁体系统</li>
+                                            <li class="list-group-item">梯度系统</li>
+                                            <li class="list-group-item">射频系统</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="row mt-4">
+                            <div class="col-12">
+                                <div class="card">
+                                    <div class="card-header bg-dark text-white">
+                                        成像技术
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="d-flex justify-content-around flex-wrap">
+                                            <span class="badge bg-primary m-1">T1加权</span>
+                                            <span class="badge bg-primary m-1">T2加权</span>
+                                            <span class="badge bg-primary m-1">弥散成像</span>
+                                            <span class="badge bg-primary m-1">灌注成像</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="mt-4 text-muted">这是知识图谱的静态版本，交互式版本因技术原因无法加载。</p>
+                    <button class="btn btn-outline-primary mt-2" onclick="retryLoadGraph()">重新尝试加载交互图表</button>
+                </div>
+            `;
+        }
+
+        // 重新尝试加载图表
+        function retryLoadGraph() {
+            const container = document.getElementById('knowledge-graph');
+            container.classList.remove('fallback-loaded');
+            container.innerHTML = `
+                <div class="graph-placeholder">
+                    <h4>知识图谱加载中...</h4>
+                    <div class="spinner-border text-primary mb-3" role="status">
+                        <span class="visually-hidden">加载中...</span>
+                    </div>
+                    <p>重新尝试加载交互式图表</p>
+                </div>
+            `;
+            
+            setTimeout(initKnowledgeGraph, 1000);
+        }
+
+        // 根据节点类别返回颜色
+        function getNodeColor(category) {
+            const colors = ['#ff69b4', '#db7093', '#c71585', '#ff1493'];
+            return colors[category % colors.length];
+        }
+    </script>
+</body>
+</html>
